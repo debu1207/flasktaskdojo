@@ -1,0 +1,65 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+table {
+    width: 380px;
+    margin: 0 10px 0 10px;
+}
+
+th, td {
+    border: 1px solid;
+}
+th {
+    background-color: rgb(53, 194, 116);
+}
+td {
+    text-align: center;
+}
+tr {
+    margin: 0;
+}
+
+#task {
+    width: 250px;
+}
+#add {
+    width: 100px;
+}
+#action {
+    width: 100px;
+}
+
+.content{
+    margin: auto;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.content h1 {
+    color:rgb(53, 194, 116);
+    text-align: center;
+}
+.content h3 {
+    text-align: center;
+}
+
+.form {
+    width: 290px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+}
+.form input {
+    border-radius: 3px;
+    padding: 5px;
+}
+
+#content {
+    width: 200px;
+    padding-left: 10px;
+}
+
+#btn:hover {
+    background-color: rgb(53, 194, 116);
+}
