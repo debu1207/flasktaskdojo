@@ -21,7 +21,6 @@ class Todo(db.Model):
 def index():
     if request.method == 'POST':
         task_content = request.form['content']
-        print(task_content)
         new_task = Todo(content=task_content)
         try:
             db.session.add(new_task)
@@ -31,7 +30,6 @@ def index():
             return "There was an issue adding your task.!!"
     elif request.method == 'GET':
         tasks = Todo.query.order_by(Todo.date_created).all()
-
         return render_template('index.html', tasks=tasks)
 
 @app.route('/delete/<int:id>')
@@ -57,5 +55,18 @@ def update(id):
             return "Unable to update"
     else:
         return render_template('update.html', task=task)
+
+@app.route('/deleteall', methods=['POST', 'GET'])
+def deleteall():
+    tasks = Todo.query.order_by(Todo.date_created).all()
+
+    try:
+        for task in tasks:
+            db.session.delete(task)
+            db.session.commit()
+        return redirect('/')
+    except:
+        return "There was a problem deleting that task!"
+
 if __name__ == "__main__":
     app.run(debug=True)
