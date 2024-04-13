@@ -6,7 +6,7 @@
 
 {% block body %}
 <div class="content">
-    <h1>Taskdojo</h1>
+    <h1>Task<i>dojo</i></h1>
 
     {% if tasks|length < 1 %}
     <h3> There are no tasks. Create one below!</h3>
@@ -19,12 +19,12 @@
         </tr>
         {% for task in tasks %}
             <tr>
-                <td id="task">{{ task.content }}</td>
+                <td id="task"><b>{{ task.content }}</b></td>
                 <td id="add">{{ task.date_created.date() }}</td>
                 <td id="action">
-                    <a href="/delete/{{task.id}}">Delete</a>
+                    <a id="del" href="/delete/{{task.id}}">Remove</a>
                     <br>
-                    <a href="/update/{{task.id}}">Update</a>
+                    <a id="update" href="/update/{{task.id}}">Update</a>
                 </td>
             </tr>
         {% endfor %}
@@ -34,7 +34,7 @@
         <form action="/" method="POST">
             <input type="text" name="content" id="content">
             <input type="submit" value="Add Task" id="btn">
-            <a href="/deleteall">Delete all tasks</a>
+            <a id="del" href="/deleteall">Remove all tasks</a>
         </form>
         
     </div>

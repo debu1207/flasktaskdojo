@@ -32,7 +32,7 @@ tr {
 
 .content{
     margin: auto;
-    width: 400px;
+    width: 380px;
     border-radius: 10px;
 }
 
@@ -63,3 +63,24 @@ tr {
 #btn:hover {
     background-color: rgb(53, 194, 116);
 }
+
+
+a:link, a:visited {
+    background-color: #d8d4d4;
+    border: 1px solid;
+    border-radius: 5px;
+    color: rgb(8, 8, 8);
+    padding: 5px 10px;
+    margin: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  #del:hover, #del:active {
+    background-color: rgb(245, 44, 44);
+  }
+
+  #update:hover, #update:active {
+    background-color: rgb(28, 160, 16);
+  }
